@@ -1,6 +1,5 @@
 package dev.darthchaos.javaspringtest.movie;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +25,10 @@ public class MovieController {
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovieByImdbId(imdbId), HttpStatus.OK);
+    }
+
+    @GetMapping("/name/{title}")
+    public ResponseEntity<Optional<Movie>> getSingleMovieByTitle(@PathVariable String title) {
+        return new ResponseEntity<Optional<Movie>>(movieService.singleMovieByTitle(title), HttpStatus.OK);
     }
 }

@@ -19,7 +19,7 @@ public class MovieService {
         return movieRepository.findMovieByImdbId(imdbId);
     }
 
-    public Optional<Movie> singleMovieByName(String name) {
-        return movieRepository.findMovieByName(name);
+    public Optional<Movie> singleMovieByTitle(String title) {
+        return movieRepository.findMovieByTitle(title);
     }
 }
